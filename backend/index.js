@@ -3,6 +3,8 @@ const { dbConnection } = require('./db/config')
 require('dotenv').config()
 const cors = require('cors')
 
+
+
 //Crear el servidor de express
 const app = express()
 const port = process.env.PORT ?? 3000
@@ -24,7 +26,7 @@ app.use('/api/auth', require('./routes/auth'))
 app.use('/api/events', require('./routes/events'))
 
 app.get('*', (req, res) => {
-  res.sendFile( __dirname + 'public/index.html' );
+  res.sendFile( __dirname + '/public/index.html' );
 });
 
 
